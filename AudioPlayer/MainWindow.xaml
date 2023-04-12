@@ -1,0 +1,31 @@
+﻿<Window x:Class="AudioPlayer.MainWindow"
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AudioPlayer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="390" Width="440" ResizeMode="CanResize" Background="#FFABC7E4">
+    <Grid>
+        <RibbonButton x:Name="rButtonMixType" Margin="234,239,142,74" Click="rButtonMixType_Click" Height="40" Width="40" LargeImageSource="/UI/overkill.png" Background="#7FD7FF2F" />
+        <RibbonButton x:Name="rButtonFolder"  Margin="138,239,238,74" Click="rButtonFolder_Click" LargeImageSource="/UI/folder.png" Height="40" Width="40" Background="#7FD7FF2F" />
+        <RibbonButton x:Name="rButtonPrev" Margin="94,177,282,136" Click="rButtonPrev_Click" LargeImageSource="/UI/prev.png" Height="40" Width="40" Background="#7FD7FF2F" />
+        <RibbonButton x:Name="rButtonPlayPause"  Margin="190,177,186,136" Click="rButtonPlayPause_Click" LargeImageSource="/UI/play.png" Height="40" Width="40" Background="#7FD7FF2F" />
+        <RibbonButton x:Name="rButtonNext"  Margin="278,177,98,136" Click="rButtonNext_Click" LargeImageSource="/UI/next.png" Height="40" Width="40" Background="#7FD7FF2F" />
+
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="56" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" LayoutUpdated="mediaElement_LayoutUpdated" MediaOpened="mediaElement_MediaOpened">
+            <MediaElement.OpacityMask>
+                <SolidColorBrush Color="#FF9E9E9E" Opacity="0"/>
+            </MediaElement.OpacityMask>
+        </MediaElement>
+
+        <Label x:Name="labelFileInfo" Content="None audio track" HorizontalContentAlignment="Center" Margin="16,29,20,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelTimeEnd" Content="00:00" HorizontalContentAlignment="Center" Margin="201,68,20,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelTimeStart" Content="00:00" HorizontalContentAlignment="Center" Margin="16,68,205,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sliderTrackLine" Width="120" Margin="152,70,148,235" IsMoveToPointEnabled="True" />
+        <Slider x:Name="sliderVolume" Margin="160,116,156,0" VerticalAlignment="Top" ValueChanged="sliderVolume_ValueChanged" Maximum="1" LargeChange="0.1"/>
+        <Label x:Name="labelFileInfo_Copy" Content="Volume" HorizontalContentAlignment="Center" Margin="20,134,16,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
